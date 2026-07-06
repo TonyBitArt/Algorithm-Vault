@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+// Definition for singly-linked list.
 struct ListNode {
   int val;
   ListNode *next;
@@ -9,13 +10,21 @@ struct ListNode {
   ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+/** 
+ * @brief Adds two numbers represented by linked lists.
+ * @param l1 The first linked list.
+ * @param l2 The second linked list.
+ * @return The linked list representing the sum.
+ */
 class Solution {
   public:
+    // Function to add two numbers represented by linked lists
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
       ListNode* dummyHead = new ListNode(0);
       ListNode* current = dummyHead;
       int carry = 0;
 
+      // Iterate through both linked lists until all digits are processed
       while (l1 != nullptr || l2 != nullptr || carry != 0) {
         int currentSum = carry;
 
@@ -42,6 +51,7 @@ class Solution {
     }
 };
 
+// Helper functions to create and print linked lists
 ListNode* createList(const std::vector<int>& nums) {
     ListNode* dummyHead = new ListNode(0);
     ListNode* current = dummyHead;
@@ -75,6 +85,7 @@ void freeList(ListNode* head) {
     }
 }
 
+// Test the function with example inputs
 int main() {
     Solution solver;
 

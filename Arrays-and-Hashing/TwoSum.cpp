@@ -2,12 +2,20 @@
 #include <vector>
 #include <unordered_map>
 
+/** 
+ * @brief Finds two numbers in an array that add up to a target value.
+ * @param nums The array of integers.
+ * @param target The target sum.
+ * @return A vector containing the indices of the two numbers that add up to the target.
+ */
 class Solution {
 	public:
+		// Function to find two numbers that add up to a target value
 		std::vector<int> twoSum(std::vector<int>& nums, int target) {
 			std::unordered_map<int, int> seenNumbers;
 			int length = nums.size();
 
+			// Iterate through the array to find the two numbers
 			for (int i = 0; i < length; i++) {
 					int currentNumber = nums[i];
 					int requiredComplement = target - currentNumber;
@@ -22,6 +30,7 @@ class Solution {
 		}
 	};
 
+// Test the function with example inputs
 int main() {
 	Solution solver;
 
